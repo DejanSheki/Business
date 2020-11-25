@@ -100,6 +100,8 @@ nav {
     padding: 15px 40px 20px 40px;
     background: linear-gradient(to right, $pink, $violet);
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     z-index: 1;
     .logo {
