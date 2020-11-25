@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 65px;
+}
+
 body {
   font-family: "Raleway", sans-serif;
   line-height: 1.6;
@@ -40,14 +45,22 @@ a:hover {
 
 /*** mixins ***/
 /*** nav ***/
+.stickyAdd {
+  box-shadow: 0 1px 8px 3px rgba(0, 0, 0, 0.6);
+  padding: 10px 40px;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 20px 40px;
-  background: linear-gradient(to right, #f804e4, #cccac5);
+  padding: 15px 40px 20px 40px;
+  background: linear-gradient(to right, #f804e4, #7017e6);
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 nav .logo {
   font-size: 1.5rem;
@@ -87,6 +100,7 @@ nav ul li {
 nav ul li:nth-child(5) {
   background: #f804e4;
   padding: 10px 20px;
+  border-radius: 40% 10%/30% 63%;
 }
 nav ul li:nth-child(5) a {
   color: #fff;
@@ -141,7 +155,7 @@ nav .bars-open .bar:nth-child(3) {
     background: #1f1f1f;
     flex-direction: column;
     position: absolute;
-    top: 87px;
+    top: 68px;
     left: 0;
     width: 100%;
   }
@@ -203,15 +217,15 @@ header button {
   padding: 10px 30px;
   color: #fff;
   font-size: 1rem;
-  border: 1px solid transparent;
+  border: none;
+  border-radius: 40% 10%/30% 63%;
   margin-top: 20px;
   cursor: pointer;
 }
 header button:hover {
-  background: #cccac5;
-  color: gray;
+  background: #7017e6;
+  color: #f804e4;
   transition: 0.5s ease;
-  border: 1px solid #f804e4;
 }
 
 /*** about ***/
@@ -355,18 +369,15 @@ header button:hover {
   padding: 10px 30px;
   color: #fff;
   font-size: 1rem;
-  border: 1px solid transparent;
+  border: none;
+  border-radius: 40% 10%/30% 63%;
   margin-top: 20px;
   cursor: pointer;
 }
 .personalBusiness .counting button:hover {
-  background: #cccac5;
-  color: gray;
+  background: #7017e6;
+  color: #f804e4;
   transition: 0.5s ease;
-  border: 1px solid #f804e4;
-}
-.personalBusiness .counting button:hover {
-  border: 1px solid #cccac5;
 }
 .personalBusiness .counter {
   display: flex;
@@ -383,6 +394,11 @@ header button:hover {
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .personalBusiness .counter article {
+    flex: 0 0 100%;
+  }
 }
 .personalBusiness .counter article h2 {
   color: #f804e4;
@@ -448,7 +464,7 @@ header button:hover {
 
 /*** footer ***/
 footer {
-  background: linear-gradient(to right, #1f1f1f, #f804e4);
+  background: linear-gradient(to right, #7017e6, #f804e4);
   display: flex;
   justify-content: space-around;
   align-items: center;

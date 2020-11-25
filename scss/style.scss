@@ -6,6 +6,7 @@ $font: 16px;
 $black: #1f1f1f;
 // $pink: #ef1f52;
 $pink: #f804e4;
+$violet: #7017e6;
 $gray: gray;
 $lightgray: #cccac5;
 $boxShadom: #cccac5;
@@ -19,6 +20,11 @@ $padding: 50px 0;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 65px;
 }
 
 body {
@@ -69,24 +75,33 @@ a {
     padding: 10px 30px;
     color: $white;
     font-size: 1rem;
-    border: 1px solid transparent;
+    border: none;
+    border-radius: 40% 10% / 30% 63%;
     margin-top: 20px;
     cursor: pointer;
     &:hover {
-        background: $lightgray;
-        color: $gray;
+        background: $violet;
+        color: $pink;
         transition: $transition;
-        border: 1px solid $pink;
+        // border: 1px solid $pink;
     }
 }
 
 
 /*** nav ***/
 
+.stickyAdd {
+    box-shadow: 0 1px 8px 3px rgba(0, 0, 0, .6);
+    padding: 10px 40px;
+}
+
 nav {
     @include flex(space-between, center, row, wrap);
-    padding: 20px 40px;
-    background: linear-gradient(to right, $pink, $lightgray);
+    padding: 15px 40px 20px 40px;
+    background: linear-gradient(to right, $pink, $violet);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
     .logo {
         font-size: 1.5rem;
         font-weight: 700;
@@ -116,6 +131,7 @@ nav {
         li:nth-child(5) {
             background: $pink;
             padding: 10px 20px;
+            border-radius: 40% 10% / 30% 63%;
             a {
                 color: $white;
                 &:hover {
@@ -171,7 +187,7 @@ nav {
             background: $black;
             flex-direction: column;
             position: absolute;
-            top: 87px;
+            top: 68px;
             left: 0;
             width: 100%;
             a {
@@ -343,9 +359,7 @@ header {
         }
         button {
             @include btn;
-            &:hover {
-                border: 1px solid $lightgray;
-            }
+            &:hover {}
         }
     }
     .counter {
@@ -353,6 +367,9 @@ header {
         padding-bottom: 50px;
         article {
             flex: 0 0 30%;
+            @media (max-width: 768px) {
+                flex: 0 0 100%;
+            }
             @include flex(center, center, column, wrap);
             h2 {
                 color: $pink;
@@ -415,7 +432,7 @@ header {
 /*** footer ***/
 
 footer {
-    background: linear-gradient(to right, $black, $pink);
+    background: linear-gradient(to right, $violet, $pink);
     @include flex(space-around, center, row, wrap);
     padding: 50px;
     @media (max-width: 768px) {
