@@ -24,7 +24,7 @@ $padding: 50px 0;
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 65px;
+    scroll-padding-top: 200px;
 }
 
 body {
@@ -361,7 +361,6 @@ header {
         }
         button {
             @include btn;
-            &:hover {}
         }
     }
     .counter {
